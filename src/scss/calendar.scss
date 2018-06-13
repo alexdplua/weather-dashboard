@@ -1,0 +1,55 @@
+.rc-calendar-table {
+  width: 100%;
+
+  .rc-calendar-column-header {
+    text-align: center;
+  }
+
+  .rc-calendar-date {
+    text-align: center;
+    padding: 7px;
+    transition: 0.3s;
+    &[aria-disabled="false"] {
+      color: #000;
+      cursor: pointer;
+    }
+  }
+
+  .rc-calendar-today,.rc-calendar-selected-date {
+    [aria-disabled="false"] {
+      background-color: $danger-dark;
+      color: white;
+    }
+  }
+
+  .rc-calendar-selected-date {
+    [aria-disabled="false"] {
+      background-color: $success-dark;
+
+    }
+  }
+
+
+
+
+}
+
+.rc-calendar-header {
+  margin-bottom: 10px;
+}
+.rc-calendar-my-select {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: #000;
+}
+
+.rc-calendar-prev-year-btn,
+.rc-calendar-prev-month-btn,
+.rc-calendar-next-month-btn,
+.rc-calendar-next-year-btn,
+.rc-calendar-month-panel,
+.rc-calendar-year-panel,
+.rc-calendar-footer{
+  display: none;
+}

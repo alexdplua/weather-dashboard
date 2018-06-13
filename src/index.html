@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <title>Ela - Bootstrap Admin Dashboard Template</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+
+    <link href="css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
+    <link href="css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
+    <link href="css/lib/owl.carousel.min.css" rel="stylesheet"/>
+    <link href="css/lib/owl.theme.default.min.css" rel="stylesheet"/>
+    <link href="css/helper.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
+    <!--[if lt IE 9]>
+    <script src="https:**oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="fix-header fix-sidebar">
+<!-- Preloader - style you can find in spinners.css -->
+<!--<div class="preloader">
+    <svg class="circular" viewBox="25 25 50 50">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+    </svg>
+</div>-->
+<div id="root"></div>
+<!-- Main wrapper  -->
+<!--<div id="main-wrapper">
+    &lt;!&ndash; header header  &ndash;&gt;
+    <div class="header">
+        <nav class="navbar top-navbar navbar-expand-md navbar-light">
+            &lt;!&ndash; Logo &ndash;&gt;
+            <div class="navbar-header">
+                <a class="navbar-brand" href="indexLayout.html">
+                    &lt;!&ndash; Logo icon &ndash;&gt;
+                    <b><img src="images/logo.png" alt="homepage" class="dark-logo"/></b>
+                    &lt;!&ndash;End Logo icon &ndash;&gt;
+                    &lt;!&ndash; Logo text &ndash;&gt;
+                    <span><img src="images/logo-text.png" alt="homepage" class="dark-logo"/></span>
+                </a>
+            </div>
+            &lt;!&ndash; End Logo &ndash;&gt;
+            <div class="navbar-collapse">
+                &lt;!&ndash; toggle and nav items &ndash;&gt;
+                <ul class="navbar-nav mr-auto mt-md-0">
+                    &lt;!&ndash; This is  &ndash;&gt;
+                    <li class="nav-item"><a class="nav-link nav-toggler hidden-md-up text-muted  "
+                                            href="javascript:void(0)"><i class="mdi mdi-menu"></i></a></li>
+                    <li class="nav-item m-l-10"><a class="nav-link sidebartoggler hidden-sm-down text-muted  "
+                                                   href="javascript:void(0)"><i class="ti-menu"></i></a></li>
+
+                </ul>
+                &lt;!&ndash; User profile and search &ndash;&gt;
+                <ul class="navbar-nav my-lg-0">
+
+                    &lt;!&ndash; Search &ndash;&gt;
+                    <li class="nav-item hidden-sm-down search-box"><a class="nav-link hidden-sm-down text-muted  "
+                                                                      href="javascript:void(0)"><i
+                            class="ti-search"></i></a>
+                        <form class="app-search">
+                            <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i
+                                class="ti-close"></i></a></form>
+                    </li>
+
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+    &lt;!&ndash; End header header &ndash;&gt;
+    &lt;!&ndash; Left Sidebar  &ndash;&gt;
+    <div class="left-sidebar">
+        &lt;!&ndash; Sidebar scroll&ndash;&gt;
+        <div class="scroll-sidebar">
+            &lt;!&ndash; Sidebar navigation&ndash;&gt;
+            <nav class="sidebar-nav">
+                <ul id="sidebarnav">
+                    <li class="nav-devider"></li>
+                    <li class="nav-label">Home</li>
+                    <li><a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tachometer"></i><span
+                            class="hide-menu">Dashboard </span></a>
+
+                    </li>
+
+                </ul>
+            </nav>
+            &lt;!&ndash; End Sidebar navigation &ndash;&gt;
+        </div>
+        &lt;!&ndash; End Sidebar scroll&ndash;&gt;
+    </div>
+    &lt;!&ndash; End Left Sidebar  &ndash;&gt;
+    &lt;!&ndash; Page wrapper  &ndash;&gt;
+    <div class="page-wrapper">
+        &lt;!&ndash; Bread crumb &ndash;&gt;
+        <div class="row page-titles">
+            <div class="col-md-5 align-self-center">
+                <h3 class="text-primary">Dashboard</h3></div>
+            <div class="col-md-7 align-self-center">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+            </div>
+        </div>
+        &lt;!&ndash; End Bread crumb &ndash;&gt;
+        &lt;!&ndash; Container fluid  &ndash;&gt;
+        <div class="container-fluid">
+            &lt;!&ndash; Start Page Content &ndash;&gt;
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card bg-primary">
+                        <div class="card-body">
+                            <div class="weather-widget">
+                                <div id="weather-one" class="weather-one"><i class="wi wi-yahoo-4"></i>
+                                    <h2> 89°F</h2>
+                                    <div class="city">Dhaka, Dhaka</div>
+                                    <div class="currently">Thunderstorms</div>
+                                    <div class="celcious">32°C</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-title">
+                                    <h4>Yearly Sales </h4>
+
+                                </div>
+                                <div class="sales-chart">
+                                    <canvas id="sales-chart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        &lt;!&ndash; /# column &ndash;&gt;
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="year-calendar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card bg-primary p-20">
+                        <div class="media widget-ten">
+                            <div class="media-left meida media-middle">
+                                <span><i class="ti-bag f-s-40"></i></span>
+                            </div>
+                            <div class="media-body media-text-right">
+                                <h2 class="color-white">278</h2>
+                                <p class="m-b-0">New Posts</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-pink p-20">
+                        <div class="media widget-ten">
+                            <div class="media-left meida media-middle">
+                                <span><i class="ti-comment f-s-40"></i></span>
+                            </div>
+                            <div class="media-body media-text-right">
+                                <h2 class="color-white">278</h2>
+                                <p class="m-b-0">New Comment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-success p-20">
+                        <div class="media widget-ten">
+                            <div class="media-left meida media-middle">
+                                <span><i class="ti-vector f-s-40"></i></span>
+                            </div>
+                            <div class="media-body media-text-right">
+                                <h2 class="color-white">$27647</h2>
+                                <p class="m-b-0">Bounce Rate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-danger p-20">
+                        <div class="media widget-ten">
+                            <div class="media-left meida media-middle">
+                                <span><i class="ti-location-pin f-s-40"></i></span>
+                            </div>
+                            <div class="media-body media-text-right">
+                                <h2 class="color-white">278</h2>
+                                <p class="m-b-0">Total Visitor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            &lt;!&ndash; End PAge Content &ndash;&gt;
+        </div>
+        &lt;!&ndash; End Container fluid  &ndash;&gt;
+        &lt;!&ndash; footer &ndash;&gt;
+        <footer class="footer"></footer>
+        &lt;!&ndash; End footer &ndash;&gt;
+    </div>
+    &lt;!&ndash; End Page wrapper  &ndash;&gt;
+</div>-->
+<!-- End Wrapper -->
+<!-- All Jquery -->
+<script src="js/lib/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap tether Core JavaScript -->
+<script src="js/lib/bootstrap/js/popper.min.js"></script>
+<script src="js/lib/bootstrap/js/bootstrap.min.js"></script>
+<!-- slimscrollbar scrollbar JavaScript -->
+<script src="js/jquery.slimscroll.js"></script>
+<!--Menu sidebar -->
+<script src="js/sidebarmenu.js"></script>
+<!--stickey kit -->
+<script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
+<!--Custom JavaScript -->
+
+
+<!-- Amchart -->
+<script src="js/lib/morris-chart/raphael-min.js"></script>
+<script src="js/lib/morris-chart/morris.js"></script>
+<script src="js/lib/morris-chart/dashboard1-init.js"></script>
+
+
+<script src="js/lib/calendar-2/moment.latest.min.js"></script>
+<!-- scripit init-->
+<script src="js/lib/calendar-2/semantic.ui.min.js"></script>
+<!-- scripit init-->
+<script src="js/lib/calendar-2/prism.min.js"></script>
+<!-- scripit init-->
+<!--<script src="js/lib/calendar-2/pignose.calendar.min.js"></script>-->
+<!-- scripit init-->
+<!--<script src="js/lib/calendar-2/pignose.init.js"></script>-->
+
+<script src="js/lib/owl-carousel/owl.carousel.min.js"></script>
+<script src="js/lib/owl-carousel/owl.carousel-init.js"></script>
+<!--<script src="js/lib/chart-js/Chart.bundle.js"></script>-->
+<!--<script src="js/lib/chart-js/chartjs-init.js"></script>-->
+
+<!-- scripit init-->
+
+<script src="js/scripts.js"></script>
+<script src="../public/bundle.js"></script>
+
+</body>
+
+</html>
