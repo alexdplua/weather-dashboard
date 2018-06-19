@@ -6,14 +6,26 @@ class ChartElement extends React.Component {
 
     static propTypes = {
         chartSettings: PropTypes.object,
-        title: PropTypes.string
+        title: PropTypes.string,
+        onClickEvent: PropTypes.func
+    }
+
+    static defaultProps  = {
+        onClickEvent: () => {}
     }
 
    componentDidMount(){
 //Sales chart
        const ctx = document.getElementById( "sales-chart" );
        ctx.height = 150;
-       const myChart = new Chart( ctx, this.props.chartSettings)
+       let settings = Object.assign({}, this.props.chartSettings)
+       settings.options.onClick = this.props.onClickEvent
+      /* settings.options.onClick = function clickHandler(evt) {
+           var firstPoint = myChart.getElementAtEvent(evt);
+            console.log('firstPoint', firstPoint);
+
+       }*/
+       const myChart = new Chart( ctx, settings)
    }
 
     render() {

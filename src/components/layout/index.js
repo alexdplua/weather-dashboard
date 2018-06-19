@@ -5,30 +5,41 @@ import Preloader from '../preloader';
 import Header from '../header';
 
 import {
-    fetchWeather
+    fetchWeather,
+    fetchWeatherApi
 } from '../../actions';
 
 class Layout extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
 
-        this.state ={
-            loading: true
+        this.state = {
+            isLoading: true,
+            data: {}
         }
     }
 
-    componentDidMount(){
-        this.props.fetchWeather()
+    componentDidMount() {
+        /*this.props.fetchWeather()
         this.setState({
             loading:false
-        })
+        })*/
+        /*fetch('https://api.weatherbit.io/v2.0/current?city=Dnipro&country=Ukraine&key=a307fa0bd54941f284d9c148bc173892')
+            .then(response => response.json())
+            .then(data => {
+                this.props.fetchWeatherApi(data)
+                this.setState({data: data, isLoading: false})
+            });*/
+
+        this.props.fetchWeatherApi()
     }
 
     render() {
-        if (this.state.loading) return <Preloader/>
-        const weather = this.props.weather
-        console.log('weather', weather);
+        if (this.props.weather.fetch) return <Preloader/>
+        console.log('weather', this.props.weather);
+        // const weather = this.props.weather
+        // console.log('weather', weather);
         return (
 
             <div>
@@ -36,7 +47,7 @@ class Layout extends React.Component {
                     <Header/>
                     <div className="page-wrapper">
                         <div className="container-fluid">
-                    {this.props.children}
+                            {this.props.children}
                         </div>
                     </div>
                 </div>
@@ -46,15 +57,16 @@ class Layout extends React.Component {
 }
 
 
-
 Layout.propTypes = {}
 
 const mapStateToProps = (state, ownProps) => ({
     weather: state.weather,
+    // forecast: state.forecast
 })
 
 const mapDispatchToProps = {
-    fetchWeather
+    fetchWeather,
+    fetchWeatherApi
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Layout)

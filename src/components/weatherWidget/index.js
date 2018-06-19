@@ -18,7 +18,7 @@ class WeatherWidgetContainer extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    weather: state.weather,
+    weather: state.weather.data,
 })
 
 

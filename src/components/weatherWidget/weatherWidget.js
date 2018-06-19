@@ -26,7 +26,7 @@ const WeatherWidget = ({
                         <h2>{celToFareng(temp)} °F</h2>
                         <div className="city">{`${city_name}, ${country_code}`}</div>
                         <div className="currently">{weather.description}</div>
-                        <div className="celcious">{temp}°C</div>
+                        <div className="celcious">{temp.toFixed(0)}°C</div>
                     </div>
                 </div>
             </div>

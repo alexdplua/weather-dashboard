@@ -7,8 +7,119 @@ import {
     FETCH_FORECAST_SUCCESS,
     FETCH_FORECAST_FAILURE,
 
-    CHART_WIDGET_DATE
+    CHART_WIDGET_DATE,
+    CALENDAR_WIDGET_DATE
 } from './actionsTypes';
+
+export const fetchWeatherApi = () => async dispatch => {
+    dispatch({type: FETCH_WEATHER_START})
+    try {
+        const response = await fetchWeather1();
+        console.log('response', response);
+        dispatch({
+            type: FETCH_WEATHER_SUCCESS,
+            payload: response
+        })
+    } catch  (err) {
+        dispatch({
+            type: FETCH_WEATHER_FAILURE,
+            payload: err,
+        })
+    }
+}
+
+export const fetchWeather1 = () => {
+    return fetch('https://api.weatherbit.io/v2.0/current?city=Dnipro&country=Ukraine&key=a307fa0bd54941f284d9c148bc173892')
+        .then(response => response.json())
+        .then(data => {
+            /*this.props.fetchWeatherApi(data)
+            this.setState({data: data, isLoading: false})*/
+            // return data
+            return {
+                count: 1,
+                data: [{
+                    app_temp:
+                        19.2,
+                    city_name:
+                        'Dnipro',
+                    clouds:
+                        100,
+                    country_code:
+                        'UA',
+                    datetime:
+                        '2018-06-08:06',
+                    dewpt:
+                        6.7,
+                    dhi:
+                        124.81,
+                    dni:
+                        736.221,
+                    elev_angle:
+                        40.1333,
+                    ghi:
+                        599.547,
+                    h_angle:
+                        -33.8,
+                    lat:
+                        48.4593,
+                    lon:
+                        35.03865,
+                    ob_time:
+                        '2018-06-08 06:30',
+                    pod:
+                        'd',
+                    precip:
+                        2.22045e-16,
+                    pres:
+                        1004.4,
+                    rh:
+                        42,
+                    slp:
+                        1022,
+                    snow:
+                        0,
+                    state_code:
+                        '04',
+                    station:
+                        'UKDD',
+                    sunrise:
+                        '01:38',
+                    sunset:
+                        '17:38',
+                    temp:
+                        20,
+                    timezone:
+                        'Europe/Kiev',
+                    ts:
+                        1528439400,
+                    uv:
+                        6.76378,
+                    vis:
+                        1.5,
+                    weather:
+                        {icon: 'r01d', code: '500', description: 'Light rain'},
+                    wind_cdir:
+                        'E',
+                    wind_cdir_full:
+                        'east',
+                    wind_dir:
+                        80,
+                    wind_spd:
+                        2
+                }]
+            }
+
+        });
+}
+
+/*
+export const fetchWeatherApi = (data) => dispatch => {
+    dispatch({
+        type: FETCH_WEATHER_SUCCESS,
+        payload: data
+    })
+}
+*/
 
 
 export const fetchWeather = () => async dispatch => {
@@ -662,9 +773,17 @@ export const fetchForecast = () => async dispatch => {
     }
 }
 
-export const chartWidget = (forecast) => async dispatch => {
+export const chartWidget = (data) => async dispatch => {
     dispatch({
         type: CHART_WIDGET_DATE,
-        payload: forecast,
+        payload: data,
+    })
+}
+
+
+export const calendarWidget = (data) => async dispatch => {
+    dispatch({
+        type: CALENDAR_WIDGET_DATE,
+        payload: data,
     })
 }

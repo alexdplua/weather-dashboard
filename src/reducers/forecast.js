@@ -2,13 +2,17 @@ import {
     FETCH_FORECAST_SUCCESS
 } from '../actions/actionsTypes';
 
-const initialState = {}
+const initialState = {
+    fetch: true,
+    data: null,
+    error: null,
+}
 
 
 export default (state = initialState, {type, payload}) => {
     switch (type) {
         case FETCH_FORECAST_SUCCESS:
-            return payload
+            return {...state, fetch: false, data: payload, error: null}
         default:
             return state
     }

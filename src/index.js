@@ -17,6 +17,7 @@ import WeatherWidgetContainer from './components/weatherWidget';
 import ChartContainer from './components/chart';
 import CalendarContainer from './components/calendar';
 import ChartWidget from './components/chart/chartWidget';
+import CalendarWidget from './components/calendar/calendarWidget';
 
 const store = createStore(reducers, composeWithDevTools(
     applyMiddleware(thunk)
@@ -33,9 +34,10 @@ ReactDOM.render(
                 <ChartContainer/>
                 <ChartWidget/>
             </div>
-            <Row classOfChild={'col-lg-12'}>
+            <div className={'row'}>
                 <CalendarContainer/>
-            </Row>
+                <CalendarWidget/>
+            </div>
         </Layout>
     </Provider>,
     document.getElementById('root')

@@ -5,12 +5,7 @@ export const getChartSettings = data => {
     let labels = []
     let labelData = []
     let description = []
-    /*data.data.map((item) => {
-            labels.push(`${getDay(item.valid_date)}.${getMonth(item.valid_date)}`)
-            labelData.push(item.temp.toFixed(0))
-            description.push(item.weather.description)
 
-    })*/
 
     for(let i = 0; i<7; i++){
         const item = data.data[i]
@@ -34,7 +29,7 @@ export const getChartSettings = data => {
                 borderColor: 'rgba(220,53,69,0.75)',
                 borderWidth: 3,
                 pointStyle: 'circle',
-                pointRadius: 5,
+                pointRadius: 10,
                 pointBorderColor: 'transparent',
                 pointBackgroundColor: 'rgba(220,53,69,0.75)',
                 description: description
@@ -101,12 +96,11 @@ export const getChartSettings = data => {
 }
 
 
-export const getChartWidgetData = (forecast, date) => {
+export const getWidgetData = (forecast, date) => {
     if (forecast.data === undefined) return null
     let result ={}
     forecast.data.map((item) => {
         const itemDate = moment(item.valid_date)
-        console.log('itemDate', itemDate);
         if(itemDate.year() === date.year()
         && itemDate.month() === date.month()
         && itemDate.date() === date.date()){
