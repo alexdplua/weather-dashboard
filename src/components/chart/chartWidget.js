@@ -19,7 +19,7 @@ class ChartWidget extends React.Component {
         console.log('here');
         return (
             <div className={'col-lg-6'}>
-                <WeatherWidget data={this.props.chartWidgetData}/>
+                <WeatherWidget date={this.props.currentDate} data={this.props.chartWidgetData}/>
             </div>
 
         );
@@ -27,8 +27,8 @@ class ChartWidget extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    chartWidgetData: getWidgetData(state.forecast, state.chartWidget)
-
+    chartWidgetData: getWidgetData(state.forecast, state.chartWidget),
+    currentDate: state.chartWidget
 })
 
 const mapDispatchToProps = {

@@ -14,32 +14,17 @@ class Layout extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            isLoading: true,
-            data: {}
-        }
     }
 
     componentDidMount() {
-        /*this.props.fetchWeather()
-        this.setState({
-            loading:false
-        })*/
-        /*fetch('https://api.weatherbit.io/v2.0/current?city=Dnipro&country=Ukraine&key=a307fa0bd54941f284d9c148bc173892')
-            .then(response => response.json())
-            .then(data => {
-                this.props.fetchWeatherApi(data)
-                this.setState({data: data, isLoading: false})
-            });*/
+
 
         this.props.fetchWeatherApi()
     }
 
     render() {
+        if (!this.props.weather.data) return <Preloader/>
         if (this.props.weather.fetch) return <Preloader/>
-        console.log('weather', this.props.weather);
-        // const weather = this.props.weather
-        // console.log('weather', weather);
         return (
 
             <div>

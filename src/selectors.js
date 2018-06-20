@@ -1,14 +1,15 @@
 import moment from 'moment';
 
 export const getChartSettings = data => {
-    if (data.data === undefined) return null
+    if (data.fetch  || !data.data) return null
     let labels = []
     let labelData = []
     let description = []
 
 
+
     for(let i = 0; i<7; i++){
-        const item = data.data[i]
+        const item = data.data.data[i]
         labels.push(`${getDay(item.valid_date)}.${getMonth(item.valid_date)}`)
         labelData.push(item.temp.toFixed(0))
         description.push(item.weather.description)
@@ -97,9 +98,10 @@ export const getChartSettings = data => {
 
 
 export const getWidgetData = (forecast, date) => {
-    if (forecast.data === undefined) return null
+    if (forecast.fetch  || !forecast.data) return null
+    console.log('fetch', forecast.fetch);
     let result ={}
-    forecast.data.map((item) => {
+    forecast.data.data.map((item) => {
         const itemDate = moment(item.valid_date)
         if(itemDate.year() === date.year()
         && itemDate.month() === date.month()
@@ -107,8 +109,8 @@ export const getWidgetData = (forecast, date) => {
             result=Object.assign({}, item)
         }
     })
-    result.city_name = forecast.city_name
-    result.country_code = forecast.country_code
+    result.city_name = forecast.data.city_name
+    result.country_code = forecast.data.country_code
     console.log('result', result);
     return result
 }
@@ -121,7 +123,7 @@ const getHours = hours => {
     return moment(hours).hour()
 }
 
-const getMonth = month => {
+export const getMonth = month => {
     const currentMonth = moment(month).month() + 1
     if (currentMonth > 9) return currentMonth
     return '0' + currentMonth

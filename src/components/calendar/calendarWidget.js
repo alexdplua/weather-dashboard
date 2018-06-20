@@ -17,7 +17,7 @@ class CalendarWidget extends React.Component {
          console.log('calendarWidgetData', this.props.calendarWidgetData);
         return (
             <div className={'col-lg-8'}>
-                <WeatherWidget data={this.props.calendarWidgetData}/>
+                <WeatherWidget date={this.props.currentDate} data={this.props.calendarWidgetData}/>
             </div>
 
         );
@@ -25,7 +25,8 @@ class CalendarWidget extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    calendarWidgetData: getWidgetData(state.forecast, state.calendarWidget)
+    calendarWidgetData: getWidgetData(state.forecast, state.calendarWidget),
+    currentDate: state.calendarWidget
 })
 
 const mapDispatchToProps = {

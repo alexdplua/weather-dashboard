@@ -8,7 +8,8 @@ class WeatherWidgetContainer extends React.Component {
 
 
     render() {
-        const data = this.props.weather.data[0]
+        const data = this.props.weather
+        console.log('data', data);
         return (
             <Row classOfChild={'col-12'}>
                 <WeatherWidget data={data}/>
@@ -18,7 +19,7 @@ class WeatherWidgetContainer extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    weather: state.weather.data,
+    weather: state.weather.data.data[0],
 })
 
 

@@ -22,10 +22,10 @@ class CalendarContainer extends React.Component {
 
     setDisabledDate(current) {
         if (!current) return false
-        const today = moment([2018, 5, 13])
+        const today = moment()
         if (today.year() === current.year()
             && today.month() === current.month()
-            && today.date() + 16 >= current.date()
+            && today.date() + 15 >= current.date()
             && today.date() <= current.date()) {
             return false;
         }

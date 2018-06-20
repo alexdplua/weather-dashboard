@@ -20,11 +20,7 @@ class ChartElement extends React.Component {
        ctx.height = 150;
        let settings = Object.assign({}, this.props.chartSettings)
        settings.options.onClick = this.props.onClickEvent
-      /* settings.options.onClick = function clickHandler(evt) {
-           var firstPoint = myChart.getElementAtEvent(evt);
-            console.log('firstPoint', firstPoint);
 
-       }*/
        const myChart = new Chart( ctx, settings)
    }
 
