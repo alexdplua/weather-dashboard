@@ -215,7 +215,7 @@ h6 {
 }
 @media (min-width: 1024px) {
   .page-wrapper {
-    margin-left: 240px;
+
   }
   .footer {
     left: 240px;
@@ -223,7 +223,7 @@ h6 {
 }
 @media (max-width: 1023px) {
   .page-wrapper {
-    margin-left: 60px;
+
     -webkit-transition: 0.2s ease-in;
     -o-transition: 0.2s ease-in;
     transition: 0.2s ease-in;
@@ -1456,7 +1456,6 @@ textarea {
     line-height: 40px;
   }
   .mini-sidebar .page-wrapper {
-    margin-left: 60px;
   }
   .mini-sidebar .footer {
     left: 60px;
@@ -1516,7 +1515,10 @@ textarea {
     height: 480px;
     overflow: auto;
   }
-  .mini-sidebar .page-wrapper {
+  .page-wrapper{
+    padding-top: 60px;
+  }
+  .mini-sidebar  {
     margin-left: 0;
     padding-top: 60px;
   }

@@ -5,7 +5,6 @@ import Preloader from '../preloader';
 import Header from '../header';
 
 import {
-    fetchWeather,
     fetchWeatherApi
 } from '../../actions';
 
@@ -50,7 +49,6 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = {
-    fetchWeather,
     fetchWeatherApi
 }
 

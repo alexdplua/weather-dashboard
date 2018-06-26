@@ -14,7 +14,7 @@ import {
 
 export const fetchWeatherApi = () =>  dispatch => {
     dispatch({type: FETCH_WEATHER_START})
-        return fetch("https://api.weatherbit.io/v2.0/current?city=Dnipro&country=Ukraine&key=a307fa0bd54941f284d9c148bc173892")
+        return fetch("https://api.weatherbit.io/v2.0/current?&ip=auto&key=a307fa0bd54941f284d9c148bc173892")
             .then(handleErrors)
             .then(res => res.json())
             .then(json => {
@@ -33,7 +33,7 @@ export const fetchWeatherApi = () =>  dispatch => {
 export const fetchForecast = () =>  dispatch => {
     dispatch({type: FETCH_FORECAST_START})
 
-    return fetch("https://api.weatherbit.io/v2.0/forecast/daily?&lat=48.4593&lon=35.03865&key=a307fa0bd54941f284d9c148bc173892")
+    return fetch("https://api.weatherbit.io/v2.0/forecast/daily?&ip=auto&key=a307fa0bd54941f284d9c148bc173892")
         .then(handleErrors)
         .then(res => res.json())
         .then(json => {
